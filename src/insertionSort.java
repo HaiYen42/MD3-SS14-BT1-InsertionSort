@@ -17,13 +17,20 @@ public class insertionSort {
 
 public int [] insertionSort(int []list){
     for (int i = 1; i < list.length ; i++) {
+        System.out.println("Step "+ i+ " has current value is "+ list[i]);
         int currentElement = list[i];
         int k;
         for (k = i-1; k >=0 && list[k]>currentElement; k--) {
-                list[k+1]= list[k];
+            System.out.println("Value of index "+ (k+1) +" from " + list[k+1] + " to "+ list[k] );
+            list[k+1]= list[k];
+            System.out.println("Temp array is "+ Arrays.toString(list));
         }
+        System.out.println("Element of index "+ (k+1)+ "from "+ list[k+1]+ " become "+ currentElement);
         list[k+1]=currentElement;
+        System.out.println("Array at end of step "+ i+ " is "+ Arrays.toString(list));
+        System.out.println("--------------------------------------------------------");
     }
+
     return list;
 }
 }
